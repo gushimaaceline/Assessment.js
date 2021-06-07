@@ -4,70 +4,131 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/w3css/3/w3.css">
 <link rel="stylesheet" href="style.css">
+
 <body>
 
-<!-- Navigation -->
-<nav class="w3-bar w3-black">
-  <a href="#home" class="w3-button w3-bar-item">Home</a>
-  <a href="#tour" class="w3-button w3-bar-item">Tour</a>
-  <a href="#contact" class="w3-button w3-bar-item">Contact</a>
-</nav>
+  <!-- Navigation -->
+  <nav class="w3-bar w3-black">
+    <a href="#home" class="w3-button w3-bar-item">Home</a>
+    <a href="#tour" class="w3-button w3-bar-item">Tour</a>
+    <a href="#contact" class="w3-button w3-bar-item">Contact</a>
+  </nav>
 
-<!-- Slide Show -->
-<section>
-  <img class="mySlides" src="https://nairobinews.nation.co.ke/wp-content/uploads/2019/09/Sauti-Sol.jpg"
-  style="width:100%">
-  <img class="mySlides" src="https://i2.wp.com/www.soundsofafrica.org/wp-content/uploads/2020/07/sauti-sol-2.jpg?fit=1200%2C1200&ssl=1"
-  style="width:100%">
-  <img class="mySlides" src="http://ocdn.eu/images/pulscms/NTE7MDA_/30b2539286250f255f865326b5d72f7e.png"
-  style="width:100%">
-</section>
+  <!-- Slide Show -->
+  <section>
+    <img class="mySlides" src="https://nairobinews.nation.co.ke/wp-content/uploads/2019/09/Sauti-Sol.jpg"
+      style="width:100%">
+    <img class="mySlides"
+      src="https://i2.wp.com/www.soundsofafrica.org/wp-content/uploads/2020/07/sauti-sol-2.jpg?fit=1200%2C1200&ssl=1"
+      style="width:100%">
+    <img class="mySlides" src="http://ocdn.eu/images/pulscms/NTE7MDA_/30b2539286250f255f865326b5d72f7e.png"
+      style="width:100%">
+  </section>
 
 
-<!-- Band Description -->
-<section class="w3-container w3-center w3-content" style="max-width:600px">
+  <!-- Band Description -->
+  <section class="w3-container w3-center w3-content" style="max-width:600px">
     <h2 class="w3-wide">THE BAND</h2>
     <p class="w3-opacity"><i>We love music</i></p>
-    <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing
+      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+      in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua.</p>
   </section>
 
   <!-- Inputs section -->
 
 
-         <h1> Personal Details </h1>   
-        <form>  
-         <div id="Contact">
-            <div class="container">   
-                <label>CompanyName : </label>   
-                <input type="text" placeholder="Enter Company Name" name="companyname" required>  
-                <label>PhoneNumber : </label>   
-                <input type="password" placeholder="Enter Phone Number" name="phonenumber" required>  
-                <label>Location : </label>   
-                <input type="password" placeholder="Enter Location" name="location" required> 
-                <button type="submit">Book Dates</button>   
-                <input type="checkbox" checked="checked"> Booked  
-                <button type="button" class="cancelbtn"> Cancel</button>   
-                
-                  
-            </div>   
-        </form>     
-    </body>   
+  
+  <form>
+    <div id="contact">
+      <h1> Personal Details </h1>
+        <label>CompanyName : </label>
+        <input type="text" id="companyname" placeholder="Enter Company Name" name="companyname" required>
+        <label>PhoneNumber : </label>
+        <input type="password" id="phonenumber" placeholder="Enter Phone Number" name="phonenumber" required>
+        <label>Location : </label>
+        <input type="password" id="location" placeholder="Enter Location" name="location" required>
+        <button type="submit">Book Dates</button>
+        <div>
+          <label for="Booking dates">Booking dates:</label>
+          <input type="date" id="start" name="booking start"
+             value="2021-06-7"
+              max="2021-06-15"> 
+          </div>
+          
+        <input TYPE="BUTTON" VALUE="Display" onClick="display();">
+
+      <input type = "text"
+          id = "result" />
+        <input type="checkbox" checked="checked"> Booked
+        <button type="button" class="cancelbtn"> Cancel</button>
 
 
+
+      </div>
   </form>
-</div>
- <script src="app.js"></script>
+<script>
+  // Automatic Slideshow - change image every 3 seconds
+  var myIndex = 0;
+  carousel();
+  
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000);
+  }
+    
+  
+    function displayInput(){
+    var name=document.getElementById("compname").value
+    var phonenumber=document.getElementById("phonenumber").value
+    var location=document.getElementById("location").value
+    var date=document.getElementById("date").value
+    if(name != null && phonenumber != null && location != null && date != null){
+      alert("Company Name:"+name+"      PhoneNumber:"+phonenumber+"       Location:"+location+
+              "    Date:"+date)
+      return (true)
+         
+        }
+    else{
+      alert("Information is required")
+      return (false)
+        }
 
+
+        }
+</script>
 </body>
+
 </html>
 
+<!-- Q3.
 
-<h2>In your own words, explain how the script for moving the carousel works</h2> 
- 
-<p> 
+In your own words, explain how the script for moving the carousel works
+The caroursel is a non stop movement of html content like images or texts,
+it is like a slide slideshow. Texts or images are styled in Css transforms and to make the continue
+movement,javaScript interfers.
 
-The caroursel is a non stop movement of html content like images or texts,<br> 
-it is like a slide slideshow. Texts or images are styled in Css transforms and to make the continue movement,javaScript interfers.<br>
+Users to see the effects through browsers like Chrome; internet explorer. 
+When the users are not connnected to interbet they can not see that effect,they will only one landing image.
 
- Users to see the effects through browsers like Chrome; internet explorer. <br>
- When the users are not connnected to interbet they can not see that effect,they will only one landing image.</p>
+Briefly,
+An array that is storing all the images in the slideshow is represented by variable x.
+Items  in array x are represented by all elements  with the id-mySlides.
+var myIndex represents the index of each individual element in the array
+while var i represents each individual item in the array
+
+the setTimeout is method responsible for each image displaying for 3 seconds.
+In the function we are looping through all the elements in the array while incrementing the index of 
+each item from 1.If the index is not greater than the length of the array
+we are displaying the item at that index using a block format. -->
+
